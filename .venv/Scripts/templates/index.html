@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compute Fibonacci Sequence</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Compute Fibonacci Sequence</h1>
+        </div>
+        <div>
+            <form method="POST" action="/">
+                <label for="inputEnd">Enter the maximum number to end the Fibonacci sequence:</label>
+                <input type="number" id="inputEnd" name="inputEnd" required>
+                <button type="submit">Compute</button>
+            </form>
+        </div>
+        <div>
+            {% if result %}
+            <h2>The Fibonacci sequence:</h2>
+            <p>{{ result }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
